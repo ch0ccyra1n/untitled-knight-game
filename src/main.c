@@ -2,7 +2,7 @@
 #include "grid.h"
 
 #define ROWS 15
-#define COLS 10
+#define COLS 6
 #define CELL_SIZE 32
 
 #if defined(PLATFORM_WEB)
