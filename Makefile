@@ -1,5 +1,11 @@
 all: cmake_default
 
+run: build
+	cd build/untitled-knight-game && ./untitled-knight-game
+
+build:
+	make cmake_default
+
 debug: cmake_default_debug
 
 clean:
