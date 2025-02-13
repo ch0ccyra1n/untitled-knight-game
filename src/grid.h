@@ -1,7 +1,8 @@
 #ifndef _GRID_H
 #define _GRID_H
 
-#include <raylib.h>
+#include "raylib.h"
+
 struct Grid {
   int rows;
   int cols;
