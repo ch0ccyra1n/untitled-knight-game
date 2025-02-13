@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
 
   PrintGrid(grid);
 
-  InitWindow(screenWidth, screenHeight, title); // Initializes the game window
+  InitWindow(screenWidth, screenHeight, title); // Initializes the game window. Don't load in textures until afterwards or you WILL get a segfault!
   GameScreen currentScreen = LOGO;
   SetTargetFPS(60);       // Set our game to run at 60 frames-per-second
 
@@ -32,6 +32,8 @@ int main(int argc, char *argv[]) {
 
   Music titleMusic = LoadMusicStream("resources/ida_chip003.xm");
   Music endlessMusic = LoadMusicStream("resources/ida_game-disco.xm");
+
+  Texture2D gemTexture = LoadTexture("resources/sprites/gems_template.png");
 
   // Variables used for Raylib logo screen
   int logoPositionX = screenWidth/2 - 128;
@@ -151,14 +153,18 @@ int main(int argc, char *argv[]) {
         StopMusicStream(titleMusic);
         PlayMusicStream(endlessMusic);
         ClearBackground(darkBlue);
-        DrawGameGrid(grid, CELL_SIZE);
+        DrawGameGrid(grid, CELL_SIZE, gemTexture);
       } break;
       default: break;
     }
     EndDrawing();
   }
 
+  UnloadTexture(gemTexture);
+
   FreeGrid(grid);
+
+  CloseAudioDevice();
 
   CloseWindow();
 

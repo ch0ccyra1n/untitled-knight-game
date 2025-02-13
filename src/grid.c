@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <assert.h>
 #include "grid.h"
-#include "colors.h"
 #include "raylib.h"
 
 struct Grid* InitializeGrid(int rows, int cols) {
@@ -17,7 +16,7 @@ struct Grid* InitializeGrid(int rows, int cols) {
     grid->data[row] = (int*)malloc(cols * sizeof(int));
 
     for (int col = 0; col < cols; col++) {
-      grid->data[row][col] = 0;
+      grid->data[row][col] = 8; // This is the equivalent of having each tile empty, since sprite 9 is intentionally left blank
     }
   }
 
@@ -38,11 +37,14 @@ void FreeGrid(struct Grid *grid) {
   free(grid);
 }
 
-void DrawGameGrid(struct Grid *grid, int cellSize) {
+void DrawGameGrid(struct Grid *grid, int cellSize, Texture2D gemTexture) {
   for (int row = 0; row < grid->rows; row++) {
     for (int col = 0; col < grid->cols; col++) {
       int cellValue = grid->data[row][col];
-      DrawRectangle(col * cellSize+1+215, row * cellSize+1, cellSize-1, cellSize-1, colors[cellValue]);
+      Vector2 texturePosition = { col * cellSize + 1 + 215 , row * cellSize + 1 };
+      Rectangle gemRec = {cellValue * 32,0,cellSize - 1,cellSize - 1};
+      DrawRectangle(col * cellSize+1+215, row * cellSize+1, cellSize-1, cellSize-1, DARKBLUE);
+      DrawTextureRec(gemTexture, gemRec, texturePosition, WHITE);
     }
   }
 }
