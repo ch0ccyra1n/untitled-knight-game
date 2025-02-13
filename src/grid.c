@@ -42,7 +42,7 @@ void DrawGameGrid(struct Grid *grid, int cellSize) {
   for (int row = 0; row < grid->rows; row++) {
     for (int col = 0; col < grid->cols; col++) {
       int cellValue = grid->data[row][col];
-      DrawRectangle(col * cellSize+1+220, row * cellSize+1, cellSize-1, cellSize-1, colors[cellValue]);
+      DrawRectangle(col * cellSize+1+215, row * cellSize+1, cellSize-1, cellSize-1, colors[cellValue]);
     }
   }
 }
