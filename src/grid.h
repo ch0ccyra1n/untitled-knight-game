@@ -15,6 +15,10 @@ void PrintGrid(struct Grid*);
 
 void FreeGrid(struct Grid*);
 
+void GetNewGems(int*);
+
+int UpdateGameGrid(struct Grid*, int*);
+
 void DrawGameGrid(struct Grid*, int, Texture2D); 
 
 #endif // !_GRID_H

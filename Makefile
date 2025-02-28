@@ -6,6 +6,9 @@ run: build
 build:
 	make cmake_default
 
+dreamcast: build_setup_dreamcast
+	cmake --build build
+
 debug: cmake_default_debug
 
 clean:
@@ -22,3 +25,7 @@ build_setup_debug:
 
 build_setup:
 	cmake -S . -B build
+
+build_setup_dreamcast:
+	cmake -S . -B build -DPLATFORM=Dreamcast
+

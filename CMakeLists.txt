@@ -3,6 +3,14 @@ project(untitled-knight-game)
 
 include(FetchContent)
 
+if ("${PLATFORM}" STREQUAL "Dreamcast")
+    set(CMAKE_C_COMPILER kos-cc)
+    set(CMAKE_CXX_COMPILER kos-cc)
+else()
+    set(CMAKE_C_COMPILER clang)
+    set(CMAKE_CXX_COMPILER clang)
+endif()
+
 # Generate compile_commands.json
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
