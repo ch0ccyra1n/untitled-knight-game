@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://b41fdcy8jcbgn"
+path="res://.godot/imported/underwater.gif-2cac6fcc3a9e15e12c26f518ee9b634c.tres"
+
+[deps]
+
+source_file="res://backgrounds/underwater.gif"
+dest_files=["res://.godot/imported/underwater.gif-2cac6fcc3a9e15e12c26f518ee9b634c.tres"]
+
+[params]
+

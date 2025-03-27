@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ouyxt8tx2gil"]
+
+[ext_resource type="Texture2D" uid="uid://7eeqcdwv5tqu" path="res://sprites/gems_callum.png" id="1_i37i2"]
+[ext_resource type="Script" uid="uid://duwgx05s3srp3" path="res://tile_map.gd" id="2_17g6i"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ixtvp"]
+texture = ExtResource("1_i37i2")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+8:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ldeew"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_ixtvp")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_ldeew")
+rendering_quadrant_size = 32
+format = 2
+layer_0/name = "board"
+layer_1/name = "active"
+script = ExtResource("2_17g6i")

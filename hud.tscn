@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl6u1fj43o5l7"]
+
+[ext_resource type="Texture2D" uid="uid://dnalam07xeh25" path="res://sprites/r-button.png" id="1_37p78"]
+[ext_resource type="Texture2D" uid="uid://bmhofr8etdjq5" path="res://sprites/start-button.png" id="2_64ctp"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 481.0
+offset_top = 16.0
+offset_right = 636.0
+offset_bottom = 39.0
+text = "Score: 0"
+
+[node name="GameOverLabel" type="Label" parent="."]
+offset_left = 273.0
+offset_top = 220.0
+offset_right = 365.0
+offset_bottom = 243.0
+text = "Game Over!"
+
+[node name="NewGameLabel" type="Label" parent="."]
+offset_left = 241.0
+offset_top = 253.0
+offset_right = 405.0
+offset_bottom = 328.0
+text = "Press     on keyboard 
+or       on controller
+to restart!"
+horizontal_alignment = 1
+
+[node name="Start-button" type="Sprite2D" parent="NewGameLabel"]
+position = Vector2(41, 39)
+scale = Vector2(1.58333, 1.58333)
+texture = ExtResource("2_64ctp")
+
+[node name="R-button" type="Sprite2D" parent="NewGameLabel"]
+position = Vector2(52, 13)
+texture = ExtResource("1_37p78")
+
+[node name="ColorRect" type="ColorRect" parent="NewGameLabel"]
+z_index = -1
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 165.0
+offset_bottom = 79.0
+color = Color(0, 0.30283, 0.492716, 1)

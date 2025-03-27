@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://3ee5f720w2xn"
+path="res://.godot/imported/underwater.gif-cb10ee136d4f3449c3a57bd77e6fd1c9.tres"
+
+[deps]
+
+source_file="res://sprites/underwater.gif"
+dest_files=["res://.godot/imported/underwater.gif-cb10ee136d4f3449c3a57bd77e6fd1c9.tres"]
+
+[params]
+
+frames_per_second=30
